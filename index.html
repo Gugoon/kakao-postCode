@@ -18,12 +18,12 @@
       console.log("onReceivedPostMessage "+event);
     }
     function postMessageToApp(postData) {
-        var findOS = navigator.userAgent.toLowerCase();
-        if (findOS.indexOf("android") !== -1) {
-            AndroidBridge.postAddress(JSON.stringify(postData));
-        }else{
+//         var findOS = navigator.userAgent.toLowerCase();
+//         if (findOS.indexOf("android") !== -1) {
+//             AndroidBridge.postAddress(JSON.stringify(postData));
+//         }else{
             window.webkit.messageHandlers.callBackHandler.postMessage(postData);
-        }
+//         }
     }
     var element_layer = document.getElementById('layer');
     function execDaumPostcode() {
